@@ -10,10 +10,11 @@ function run() {
   createOutputFolder();
   filesList = fs.readdirSync(folderPath);
   readFolderContents();
+  createIndex();
 }
 
 function readFolderContents() {
-  filesList.forEach((file, index) => {
+  filesList.forEach((file) => {
     const filePath = path.join(folderPath, file);
     iterateSVGs(filePath);
   });
